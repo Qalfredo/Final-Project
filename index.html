@@ -150,9 +150,437 @@
 </div>
 <div id="analisis-exploratorio" class="section level2">
 <h2>Análisis Exploratorio</h2>
-<p>Aqui se muestran datos y estadisticas basicas</p>
+<div id="tags-mas-frecuentes-y-nube-de-palabras" class="section level4">
+<h4>Tags mas frecuentes y nube de palabras</h4>
+<pre><code>## $x
+## $x$word
+##   [1] &quot;calculus&quot;                  &quot;real-analysis&quot;            
+##   [3] &quot;linear-algebra&quot;            &quot;probability&quot;              
+##   [5] &quot;abstract-algebra&quot;          &quot;integration&quot;              
+##   [7] &quot;sequences-and-series&quot;      &quot;general-topology&quot;         
+##   [9] &quot;combinatorics&quot;             &quot;matrices&quot;                 
+##  [11] &quot;complex-analysis&quot;          &quot;algebra-precalculus&quot;      
+##  [13] &quot;group-theory&quot;              &quot;geometry&quot;                 
+##  [15] &quot;functional-analysis&quot;       &quot;analysis&quot;                 
+##  [17] &quot;number-theory&quot;             &quot;differential-equations&quot;   
+##  [19] &quot;limits&quot;                    &quot;elementary-number-theory&quot; 
+##  [21] &quot;probability-theory&quot;        &quot;statistics&quot;               
+##  [23] &quot;measure-theory&quot;            &quot;functions&quot;                
+##  [25] &quot;multivariable-calculus&quot;    &quot;discrete-mathematics&quot;     
+##  [27] &quot;trigonometry&quot;              &quot;elementary-set-theory&quot;    
+##  [29] &quot;derivatives&quot;               &quot;differential-geometry&quot;    
+##  [31] &quot;inequality&quot;                &quot;algebraic-geometry&quot;       
+##  [33] &quot;logic&quot;                     &quot;polynomials&quot;              
+##  [35] &quot;proof-verification&quot;        &quot;probability-distributions&quot;
+##  [37] &quot;graph-theory&quot;              &quot;reference-request&quot;        
+##  [39] &quot;ring-theory&quot;               &quot;convergence&quot;              
+##  [41] &quot;pde&quot;                       &quot;algebraic-topology&quot;       
+##  [43] &quot;optimization&quot;              &quot;definite-integrals&quot;       
+##  [45] &quot;vector-spaces&quot;             &quot;complex-numbers&quot;          
+##  [47] &quot;commutative-algebra&quot;       &quot;summation&quot;                
+##  [49] &quot;soft-question&quot;             &quot;metric-spaces&quot;            
+##  [51] &quot;stochastic-processes&quot;      &quot;continuity&quot;               
+##  [53] &quot;numerical-methods&quot;         &quot;finite-groups&quot;            
+##  [55] &quot;algorithms&quot;                &quot;proof-writing&quot;            
+##  [57] &quot;field-theory&quot;              &quot;prime-numbers&quot;            
+##  [59] &quot;notation&quot;                  &quot;category-theory&quot;          
+##  [61] &quot;eigenvalues-eigenvectors&quot;  &quot;permutations&quot;             
+##  [63] &quot;fourier-analysis&quot;          &quot;modular-arithmetic&quot;       
+##  [65] &quot;induction&quot;                 &quot;logarithms&quot;               
+##  [67] &quot;vectors&quot;                   &quot;random-variables&quot;         
+##  [69] &quot;modules&quot;                   &quot;recurrence-relations&quot;     
+##  [71] &quot;set-theory&quot;                &quot;asymptotics&quot;              
+##  [73] &quot;representation-theory&quot;     &quot;terminology&quot;              
+##  [75] &quot;operator-theory&quot;           &quot;power-series&quot;             
+##  [77] &quot;manifolds&quot;                 &quot;convex-analysis&quot;          
+##  [79] &quot;arithmetic&quot;                &quot;galois-theory&quot;            
+##  [81] &quot;taylor-expansion&quot;          &quot;algebraic-number-theory&quot;  
+##  [83] &quot;binomial-coefficients&quot;     &quot;contest-math&quot;             
+##  [85] &quot;improper-integrals&quot;        &quot;exponential-function&quot;     
+##  [87] &quot;hilbert-spaces&quot;            &quot;differential-topology&quot;    
+##  [89] &quot;definition&quot;                &quot;divisibility&quot;             
+##  [91] &quot;computer-science&quot;          &quot;lie-groups&quot;               
+##  [93] &quot;lebesgue-integral&quot;         &quot;systems-of-equations&quot;     
+##  [95] &quot;combinations&quot;              &quot;euclidean-geometry&quot;       
+##  [97] &quot;banach-spaces&quot;             &quot;diophantine-equations&quot;    
+##  [99] &quot;linear-transformations&quot;    &quot;riemannian-geometry&quot;      
+## [101] &quot;normal-distribution&quot;       &quot;lebesgue-measure&quot;         
+## [103] &quot;ideals&quot;                    &quot;determinant&quot;              
+## [105] &quot;analytic-geometry&quot;         &quot;lie-algebras&quot;             
+## [107] &quot;norm&quot;                      &quot;dynamical-systems&quot;        
+## [109] &quot;roots&quot;                     &quot;fourier-series&quot;           
+## [111] &quot;partial-derivative&quot;        &quot;expectation&quot;              
+## [113] &quot;physics&quot;                   &quot;circle&quot;                   
+## [115] &quot;compactness&quot;               &quot;special-functions&quot;        
+## [117] &quot;indefinite-integrals&quot;      &quot;triangle&quot;                 
+## [119] &quot;convex-optimization&quot;       &quot;vector-analysis&quot;          
+## [121] &quot;self-learning&quot;             &quot;recreational-mathematics&quot; 
+## [123] &quot;sobolev-spaces&quot;            &quot;graphing-functions&quot;       
+## [125] &quot;finite-fields&quot;             &quot;examples-counterexamples&quot; 
+## [127] &quot;markov-chains&quot;             &quot;relations&quot;                
+## [129] &quot;exponentiation&quot;            &quot;stochastic-calculus&quot;      
+## [131] &quot;propositional-calculus&quot;    &quot;inverse&quot;                  
+## [133] &quot;homological-algebra&quot;       &quot;normed-spaces&quot;            
+## [135] &quot;homology-cohomology&quot;       &quot;intuition&quot;                
+## [137] &quot;linear-programming&quot;        &quot;proof-explanation&quot;        
+## [139] &quot;quadratics&quot;                &quot;lp-spaces&quot;                
+## [141] &quot;approximation&quot;             &quot;education&quot;                
+## [143] &quot;problem-solving&quot;           &quot;extension-field&quot;          
+## [145] &quot;conic-sections&quot;            &quot;laplace-transform&quot;        
+## [147] &quot;generating-functions&quot;      &quot;inner-product-space&quot;      
+## [149] &quot;matlab&quot;                    &quot;factorial&quot;                
+## [151] &quot;order-theory&quot;              &quot;mathematical-physics&quot;     
+## [153] &quot;tensor-products&quot;           &quot;analytic-number-theory&quot;   
+## [155] &quot;puzzle&quot;                    &quot;contour-integration&quot;      
+## [157] &quot;transformation&quot;            &quot;abelian-groups&quot;           
+## [159] &quot;homotopy-theory&quot;           &quot;cardinals&quot;                
+## [161] &quot;brownian-motion&quot;           &quot;closed-form&quot;              
+## [163] &quot;functional-equations&quot;      &quot;computational-complexity&quot; 
+## [165] &quot;uniform-convergence&quot;       &quot;math-history&quot;             
+## [167] &quot;real-numbers&quot;              &quot;model-theory&quot;             
+## [169] &quot;factoring&quot;                 &quot;predicate-logic&quot;          
+## [171] &quot;3d&quot;                        &quot;coordinate-systems&quot;       
+## [173] &quot;game-theory&quot;               &quot;radicals&quot;                 
+## [175] &quot;matrix-equations&quot;          &quot;smooth-manifolds&quot;         
+## [177] &quot;numerical-linear-algebra&quot;  &quot;boolean-algebra&quot;          
+## [179] &quot;book-recommendation&quot;       &quot;first-order-logic&quot;        
+## [181] &quot;congruences&quot;               &quot;distribution-theory&quot;      
+## [183] &quot;statistical-inference&quot;     &quot;equivalence-relations&quot;    
+## [185] &quot;polar-coordinates&quot;         &quot;area&quot;                     
+## [187] &quot;irreducible-polynomials&quot;   &quot;differential-forms&quot;       
+## [189] &quot;volume&quot;                    &quot;rotations&quot;                
+## [191] &quot;surfaces&quot;                  &quot;finance&quot;                  
+## [193] &quot;operator-algebras&quot;         &quot;parametric&quot;               
+## [195] &quot;tensors&quot;                   &quot;connectedness&quot;            
+## [197] &quot;regression&quot;                &quot;fractions&quot;                
+## [199] &quot;elliptic-curves&quot;           &quot;infinity&quot;                 
+## [201] &quot;algebraic-curves&quot;          &quot;absolute-value&quot;           
+## [203] &quot;martingales&quot;               &quot;alternative-proof&quot;        
+## [205] &quot;spectral-theory&quot;           &quot;computability&quot;            
+## [207] &quot;calculus-of-variations&quot;    &quot;gamma-function&quot;           
+## [209] &quot;complex-geometry&quot;          &quot;convolution&quot;              
+## [211] &quot;harmonic-analysis&quot;         &quot;nonlinear-optimization&quot;   
+## [213] &quot;solution-verification&quot;     &quot;conditional-expectation&quot;  
+## [215] &quot;matrix-calculus&quot;           &quot;residue-calculus&quot;         
+## [217] &quot;irrational-numbers&quot;        &quot;sheaf-theory&quot;             
+## [219] &quot;recursion&quot;                 &quot;fibonacci-numbers&quot;        
+## [221] &quot;symmetric-groups&quot;          &quot;vector-bundles&quot;           
+## [223] &quot;riemann-zeta&quot;              &quot;axiom-of-choice&quot;          
+## [225] &quot;signal-processing&quot;         &quot;projective-geometry&quot;      
+## [227] &quot;c-star-algebras&quot;           &quot;big-list&quot;                 
+## [229] &quot;complex-integration&quot;       &quot;limits-without-lhopital&quot;  
+## [231] &quot;random&quot;                    &quot;automata&quot;                 
+## [233] &quot;formal-languages&quot;          &quot;interpolation&quot;            
+## [235] &quot;mathematical-modeling&quot;     &quot;lagrange-multiplier&quot;      
+## [237] &quot;cryptography&quot;              &quot;topological-groups&quot;       
+## [239] &quot;group-actions&quot;             &quot;partitions&quot;               
+## [241] &quot;epsilon-delta&quot;             &quot;markov-process&quot;           
+## [243] &quot;divergent-series&quot;          &quot;curves&quot;                   
+## [245] &quot;rational-numbers&quot;          &quot;schemes&quot;                  
+## [247] &quot;stochastic-integrals&quot;      &quot;quadratic-forms&quot;          
+## [249] &quot;binomial-theorem&quot;          &quot;supremum-and-infimum&quot;     
+## [251] &quot;random-walk&quot;               &quot;harmonic-functions&quot;       
+## [253] &quot;machine-learning&quot;          &quot;orthogonality&quot;            
+## [255] &quot;information-theory&quot;        &quot;cauchy-sequences&quot;         
+## [257] &quot;diagonalization&quot;           &quot;limsup-and-liminf&quot;        
+## [259] &quot;cyclic-groups&quot;             &quot;coding-theory&quot;            
+## [261] &quot;riemann-surfaces&quot;          &quot;trees&quot;                    
+## [263] &quot;prime-factorization&quot;       &quot;weak-convergence&quot;         
+## [265] &quot;uniform-continuity&quot;        &quot;ordinals&quot;                 
+## [267] &quot;products&quot;                  &quot;binary&quot;                   
+## [269] &quot;matrix-decomposition&quot;      &quot;conditional-probability&quot;  
+## [271] &quot;integers&quot;                  &quot;greatest-common-divisor&quot;  
+## [273] &quot;stochastic-analysis&quot;       &quot;hyperbolic-geometry&quot;      
+## [275] &quot;classical-mechanics&quot;       &quot;dice&quot;                     
+## [277] &quot;uniform-distribution&quot;      &quot;p-adic-number-theory&quot;     
+## [279] &quot;fourier-transform&quot;         &quot;average&quot;                  
+## [281] &quot;applications&quot;              &quot;economics&quot;                
+## [283] &quot;estimation&quot;                &quot;control-theory&quot;           
+## [285] &quot;computational-mathematics&quot; &quot;normal-subgroups&quot;         
+## [287] &quot;pi&quot;                        &quot;poisson-distribution&quot;     
+## [289] &quot;nonlinear-system&quot;          &quot;fixed-point-theorems&quot;     
+## [291] &quot;recursive-algorithms&quot;      &quot;axioms&quot;                   
+## [293] &quot;laurent-series&quot;            &quot;banach-algebras&quot;          
+## [295] &quot;bayesian&quot;                  &quot;matrix-rank&quot;              
+## [297] &quot;quantifiers&quot;               &quot;standard-deviation&quot;       
+## [299] &quot;noncommutative-algebra&quot;    &quot;math-software&quot;            
+## [301] &quot;plane-curves&quot;              &quot;topological-vector-spaces&quot;
+## [303] &quot;regular-language&quot;          &quot;floor-function&quot;           
+## [305] &quot;lattice-orders&quot;            &quot;independence&quot;             
+## [307] &quot;geometric-topology&quot;        &quot;curvature&quot;                
+## [309] &quot;group-isomorphism&quot;         &quot;covariance&quot;               
+## [311] &quot;computational-geometry&quot;    &quot;quaternions&quot;              
+## [313] &quot;sylow-theory&quot;              &quot;algebraic-groups&quot;         
+## [315] &quot;correlation&quot;               &quot;covering-spaces&quot;          
+## [317] &quot;implicit-differentiation&quot;  &quot;periodic-functions&quot;       
+## [319] &quot;partial-fractions&quot;         &quot;analyticity&quot;              
+## [321] &quot;percentages&quot;               &quot;infinite-product&quot;         
+## [323] &quot;multilinear-algebra&quot;       &quot;dirac-delta&quot;              
+## [325] &quot;spherical-coordinates&quot;     &quot;boundary-value-problem&quot;   
+## [327] &quot;least-squares&quot;             &quot;philosophy&quot;               
+## [329] &quot;fundamental-groups&quot;        &quot;bessel-functions&quot;         
+## [331] &quot;pigeonhole-principle&quot;      &quot;riemann-sum&quot;              
+## [333] &quot;context-free-grammar&quot;      &quot;projective-space&quot;         
+## [335] &quot;decimal-expansion&quot;         &quot;fractals&quot;                 
+## [337] &quot;continued-fractions&quot;       &quot;riemann-integration&quot;      
+## [339] &quot;ergodic-theory&quot;            &quot;fake-proofs&quot;              
+## [341] &quot;trace&quot;                     &quot;modular-forms&quot;            
+## [343] &quot;binomial-distribution&quot;     &quot;foundations&quot;              
+## [345] &quot;quantum-mechanics&quot;         &quot;function-composition&quot;     
+## [347] &quot;symmetry&quot;                  &quot;differential&quot;             
+## [349] &quot;conformal-geometry&quot;        &quot;orthonormal&quot;              
+## [351] &quot;inclusion-exclusion&quot;       &quot;entropy&quot;                  
+## [353] &quot;heat-equation&quot;             &quot;vector-fields&quot;            
+## [355] &quot;duality-theorems&quot;          &quot;advice&quot;                   
+## [357] &quot;semigroups&quot;                &quot;number-systems&quot;           
+## [359] &quot;coloring&quot;                  &quot;means&quot;                    
+## [361] &quot;hypergeometric-function&quot;   &quot;totient-function&quot;         
+## [363] &quot;bayes-theorem&quot;             &quot;group-homomorphism&quot;       
+## [365] &quot;sampling&quot;                  &quot;data-analysis&quot;            
+## [367] &quot;polygons&quot;                  &quot;stopping-times&quot;           
+## [369] &quot;hyperbolic-functions&quot;      &quot;maple&quot;                    
+## [371] &quot;affine-geometry&quot;           &quot;quotient-spaces&quot;          
+## [373] &quot;integral-equations&quot;        &quot;compact-operators&quot;        
+## [375] &quot;rational-functions&quot;        &quot;hypothesis-testing&quot;       
+## [377] &quot;square-numbers&quot;            &quot;characteristic-functions&quot; 
+## [379] &quot;integral-inequality&quot;       &quot;svd&quot;                      
+## [381] &quot;descriptive-set-theory&quot;    &quot;jordan-normal-form&quot;       
+## [383] &quot;central-limit-theorem&quot;     &quot;word-problem&quot;             
+## [385] &quot;polyhedra&quot;                 &quot;integer-programming&quot;      
+## [387] &quot;fiber-bundles&quot;             &quot;bilinear-form&quot;            
+## [389] &quot;cross-product&quot;             &quot;combinatorial-game-theory&quot;
+## [391] &quot;symplectic-geometry&quot;       &quot;conjectures&quot;              
+## [393] &quot;characters&quot;                &quot;knot-theory&quot;              
+## [395] &quot;lipschitz-functions&quot;       &quot;variance&quot;                 
+## [397] &quot;surface-integrals&quot;         &quot;exterior-algebra&quot;         
+## [399] &quot;approximation-theory&quot;      &quot;numerical-optimization&quot;   
+## [401] &quot;cubic-equations&quot;           &quot;filters&quot;                  
+## [403] &quot;proof-theory&quot;              &quot;wave-equation&quot;            
+## [405] &quot;spherical-geometry&quot;        &quot;exact-sequence&quot;           
+## [407] &quot;learning&quot;                  &quot;visualization&quot;            
+## [409] &quot;fluid-dynamics&quot;            &quot;roots-of-unity&quot;           
+## [411] &quot;integral-transforms&quot;       &quot;turing-machines&quot;          
+## [413] &quot;probability-limit-theorem&quot; &quot;geometric-construction&quot;   
+## [415] &quot;ratio&quot;                     &quot;trigonometric-series&quot;     
+## [417] &quot;principal-ideal-domains&quot;   &quot;spheres&quot;                  
+## [419] &quot;substitution&quot;              &quot;free-groups&quot;              
+## [421] &quot;order-statistics&quot;          &quot;mathematica&quot;              
+## [423] &quot;prime-ideals&quot;              &quot;moment-generating-functns&quot;
+## [425] &quot;time-series&quot;               &quot;transcendental-numbers&quot;   
+## [427] &quot;incompleteness&quot;            &quot;orthogonal-polynomials&quot;   
+## [429] &quot;algebraic-graph-theory&quot;    &quot;group-cohomology&quot;         
+## [431] &quot;chinese-remainder-theorem&quot; &quot;density-function&quot;         
+## [433] &quot;combinatorial-geometry&quot;    &quot;bounded-variation&quot;        
+## [435] &quot;monte-carlo&quot;               &quot;inverse-function&quot;         
+## [437] &quot;quadratic-residues&quot;        &quot;dimension-theory&quot;         
+## [439] &quot;integral-domain&quot;           &quot;integer-lattices&quot;         
+## [441] &quot;universal-algebra&quot;         &quot;abelian-categories&quot;       
+## [443] &quot;online-resources&quot;          &quot;monoid&quot;                   
+## [445] &quot;von-neumann-algebras&quot;      &quot;plane-geometry&quot;           
+## [447] &quot;minimal-polynomials&quot;       &quot;symmetric-polynomials&quot;    
+## [449] &quot;regular-expressions&quot;       &quot;noetherian&quot;               
+## [451] &quot;laplacian&quot;                 &quot;image-processing&quot;         
+## [453] &quot;geometric-measure-theory&quot;  &quot;harmonic-numbers&quot;         
+## [455] &quot;peano-axioms&quot;              &quot;maxima-minima&quot;            
+## [457] &quot;geodesic&quot;                  &quot;solid-geometry&quot;           
+## [459] &quot;card-games&quot;                &quot;forcing&quot;                  
+## [461] &quot;angle&quot;                     &quot;wolfram-alpha&quot;            
+## [463] &quot;pattern-recognition&quot;       &quot;np-complete&quot;              
+## [465] &quot;queueing-theory&quot;           &quot;binary-operations&quot;        
+## [467] &quot;adjoint&quot;                   &quot;estimation-theory&quot;        
+## [469] &quot;positive-definite&quot;         &quot;finite-differences&quot;       
+## [471] &quot;zeta-functions&quot;            &quot;geometric-group-theory&quot;   
+## [473] &quot;gre-exam&quot;                  &quot;projective-module&quot;        
+## [475] &quot;line-integrals&quot;            &quot;poisson-process&quot;          
+## [477] &quot;eigenfunctions&quot;            &quot;bezier-curve&quot;             
+## [479] &quot;law-of-large-numbers&quot;      &quot;divisor-sum&quot;              
+## [481] &quot;localization&quot;              &quot;random-graphs&quot;            
+## [483] &quot;implicit-function-theorem&quot; &quot;computer-algebra-systems&quot; 
+## [485] &quot;perturbation-theory&quot;       &quot;several-complex-variables&quot;
+## [487] &quot;parameter-estimation&quot;      &quot;discrete-optimization&quot;    
+## [489] &quot;natural-deduction&quot;         &quot;ramsey-theory&quot;            
+## [491] &quot;simplex&quot;                   &quot;splitting-field&quot;          
+## [493] &quot;simulation&quot;                &quot;nested-radicals&quot;          
+## [495] &quot;isometry&quot;                  &quot;arithmetic-geometry&quot;      
+## [497] &quot;actuarial-science&quot;         &quot;paradoxes&quot;                
+## [499] &quot;spline&quot;                    &quot;natural-numbers&quot;          
+## 
+## $x$freq
+##   [1] 66586 63440 58099 46009 41866 33988 30391 26384 26357 25344 24746
+##  [12] 24141 24057 22598 22290 21094 20943 20491 19753 19353 17652 16675
+##  [23] 16495 16259 15508 15463 14609 14184 13810 13515 13025 13012 12209
+##  [34] 11870 11509 11368 11153 10976 10131  9833  9703  9509  8836  8788
+##  [45]  8563  8538  7685  7642  7055  7048  6759  6634  6627  6546  6447
+##  [56]  6229  6172  6124  6097  6039  5919  5803  5463  4986  4865  4695
+##  [67]  4578  4526  4426  4378  4356  4223  4189  4173  4160  3831  3802
+##  [78]  3731  3722  3538  3509  3500  3489  3478  3417  3385  3369  3249
+##  [89]  3230  3146  3140  3083  3070  3058  3023  2940  2913  2902  2901
+## [100]  2882  2843  2843  2841  2840  2839  2801  2747  2724  2698  2697
+## [111]  2693  2691  2674  2648  2646  2639  2587  2583  2582  2529  2502
+## [122]  2498  2466  2432  2425  2411  2405  2384  2293  2225  2193  2176
+## [133]  2173  2172  2153  2144  2125  2121  2112  2090  2056  2012  1981
+## [144]  1972  1961  1958  1932  1900  1883  1839  1828  1827  1822  1798
+## [155]  1783  1770  1756  1753  1733  1729  1718  1693  1691  1683  1675
+## [166]  1643  1634  1628  1626  1607  1586  1581  1575  1564  1555  1550
+## [177]  1522  1491  1481  1465  1463  1460  1434  1428  1413  1373  1369
+## [188]  1358  1335  1320  1320  1318  1315  1306  1300  1300  1299  1283
+## [199]  1282  1281  1280  1279  1274  1265  1265  1248  1243  1243  1243
+## [210]  1233  1232  1176  1175  1157  1156  1153  1150  1146  1136  1135
+## [221]  1111  1108  1090  1084  1081  1058  1049  1047  1047  1047  1044
+## [232]  1037  1032  1030  1024  1023  1020   992   992   987   984   982
+## [243]   979   975   965   965   964   952   946   946   945   941   932
+## [254]   931   927   914   908   905   902   899   896   889   887   884
+## [265]   878   866   840   829   829   828   826   819   819   817   813
+## [276]   803   803   799   793   792   791   790   790   789   787   786
+## [287]   782   781   776   772   768   764   763   756   751   750   748
+## [298]   748   746   743   740   735   735   733   726   721   709   702
+## [309]   702   696   686   683   680   670   667   666   658   649   649
+## [320]   647   647   639   639   625   623   621   608   606   596   594
+## [331]   593   592   587   586   583   582   578   577   576   568   568
+## [342]   567   565   564   564   561   558   558   557   555   553   551
+## [353]   551   550   548   546   542   541   541   536   534   533   532
+## [364]   532   528   526   525   517   513   512   511   509   507   506
+## [375]   503   503   502   497   488   487   484   482   481   481   481
+## [386]   475   474   470   465   464   463   463   462   459   456   456
+## [397]   453   450   450   449   447   445   443   441   440   438   437
+## [408]   434   434   433   432   424   423   423   422   418   418   414
+## [419]   411   406   405   402   402   402   399   399   396   396   391
+## [430]   390   388   387   385   383   381   378   375   374   373   371
+## [441]   370   370   369   367   367   367   366   365   365   364   362
+## [452]   361   359   359   359   359   352   351   350   349   346   345
+## [463]   344   342   340   340   339   339   338   337   337   337   337
+## [474]   334   333   333   329   329   328   327   322   319   319   319
+## [485]   318   318   317   316   314   313   311   309   309   308   304
+## [496]   304   303   303   302   300
+## 
+## $x$fontFamily
+## [1] &quot;Segoe UI&quot;
+## 
+## $x$fontWeight
+## [1] &quot;bold&quot;
+## 
+## $x$color
+## [1] &quot;random-dark&quot;
+## 
+## $x$minSize
+## [1] 0
+## 
+## $x$weightFactor
+## [1] 0.002162617
+## 
+## $x$backgroundColor
+## [1] &quot;white&quot;
+## 
+## $x$gridSize
+## [1] 0
+## 
+## $x$minRotation
+## [1] -0.7853982
+## 
+## $x$maxRotation
+## [1] 0.7853982
+## 
+## $x$shuffle
+## [1] TRUE
+## 
+## $x$rotateRatio
+## [1] 0.4
+## 
+## $x$shape
+## [1] &quot;circle&quot;
+## 
+## $x$ellipticity
+## [1] 0.65
+## 
+## $x$figBase64
+## NULL
+## 
+## $x$hover
+## NULL
+## 
+## 
+## $width
+## NULL
+## 
+## $height
+## NULL
+## 
+## $sizingPolicy
+## $sizingPolicy$defaultWidth
+## NULL
+## 
+## $sizingPolicy$defaultHeight
+## NULL
+## 
+## $sizingPolicy$padding
+## NULL
+## 
+## $sizingPolicy$viewer
+## $sizingPolicy$viewer$defaultWidth
+## NULL
+## 
+## $sizingPolicy$viewer$defaultHeight
+## NULL
+## 
+## $sizingPolicy$viewer$padding
+## [1] 0
+## 
+## $sizingPolicy$viewer$fill
+## [1] TRUE
+## 
+## $sizingPolicy$viewer$suppress
+## [1] FALSE
+## 
+## $sizingPolicy$viewer$paneHeight
+## NULL
+## 
+## 
+## $sizingPolicy$browser
+## $sizingPolicy$browser$defaultWidth
+## NULL
+## 
+## $sizingPolicy$browser$defaultHeight
+## NULL
+## 
+## $sizingPolicy$browser$padding
+## [1] 0
+## 
+## $sizingPolicy$browser$fill
+## [1] TRUE
+## 
+## 
+## $sizingPolicy$knitr
+## $sizingPolicy$knitr$defaultWidth
+## NULL
+## 
+## $sizingPolicy$knitr$defaultHeight
+## NULL
+## 
+## $sizingPolicy$knitr$figure
+## [1] TRUE
+## 
+## 
+## 
+## $dependencies
+## NULL
+## 
+## $elementId
+## NULL
+## 
+## $preRenderHook
+## NULL
+## 
+## $jsHooks
+## list()
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;wordcloud2&quot; &quot;htmlwidget&quot;
+## attr(,&quot;package&quot;)
+## [1] &quot;wordcloud2&quot;</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" /><!-- --></p>
 <p>You can also embed plots, for example:</p>
 <p><img src="index_files/figure-html/pressure-1.png" /><!-- --></p>
+</div>
 </div>
 <div id="machine-learning" class="section level1">
 <h1>Machine Learning</h1>

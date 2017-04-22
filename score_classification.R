@@ -1,8 +1,7 @@
-library(stackr)
+
 library(tm)
 library(stringr)
 library(dplyr)
-library(wordcloud2)
 library(e1071)
  
 load(file = "informacion.Rdata")
