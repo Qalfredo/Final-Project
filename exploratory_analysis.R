@@ -23,10 +23,9 @@ tag_corpus =  tm_map(tag_corpus, stripWhitespace)
 
 
 tag_dtm <- DocumentTermMatrix(tag_corpus)
-
 inspect(tag_dtm)
 
-tag.dataframe <- as.data.frame(as.matrix(tag_dtm))
+tag.dataframe <- as.matrix(tag_dtm)
 
 # search for most frequent terms with minimal frequency = 10
 

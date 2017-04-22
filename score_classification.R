@@ -13,9 +13,11 @@ load( file = "questions_2015.Rdata")
 questions_corpus <- Corpus(VectorSource(questions$body))
 
 
+remove_lat <- function(x){gsub("<p>","",x)}
+questions_corpus = tm_map(questions_corpus, remove_lat)
 questions_corpus = tm_map(questions_corpus, removeNumbers)
 questions_corpus = tm_map(questions_corpus, removePunctuation)
-questions_corpus = tm_map(questions_corpus, removeWords, c( stopwords("english")))
+questions_corpus = tm_map(questions_corpus, removeWords, c( "function","for",stopwords("english")))
 questions_corpus =  tm_map(questions_corpus, stripWhitespace)
 
 questions_dtm <- DocumentTermMatrix(questions_corpus,control = list(weighting = weightTfIdf))
@@ -74,7 +76,7 @@ pp <- predict(naive.questions,question.testing)
 table(pp, questions_mining$score[test]) 
 
 
-
+plot(model.svm,questions.training, can ~ image )
 
 
 

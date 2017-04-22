@@ -1,6 +1,7 @@
 ---
 title: "Final-Project"
-subtitle: "Predicting Question Score"
+subtitle: "Predicting and Classificating Question Score"
+author: "Alfredo Quintana - Miguel Porro "
 output: 
      prettydoc::html_pretty:
          theme: cayman
@@ -11,14 +12,14 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r  include=FALSE, cache = TRUE}
+```{r  include=FALSE, cache=TRUE}
 source("score_classification.R")
 source("exploratory_analysis.R")
 ```
 
 
 
-## Introduccion y Motivacion
+## **Introducción y Motivación**
 
 El desarrollo integral del estudiante de matemática se basa en la investigación y recopilación de
 información adicional a la estudiada en clases, llegar a profundizar un tema puede ser muy sencillo
@@ -36,7 +37,7 @@ preguntas y mas de 7.015.119 usuarios, [math.stackexchange.com](https://math.sta
 
 El equipo esta interesado en determinar a traves de modelos de clasificacion y mineria de texto, si una pregunta hecha en el sitio tiene probabilidades de ser cerrada luego de una revision, ya sea por estar mal redact5ada, ser un duplicado de otra pregunta, etc. Además se quiere predecir el Score de una pregunta, la idea es identificar preguntas con baja calidad y hacer seguimiento de las mismas.
 
-## Los Datos
+## **Los Datos**
 
 El proceso de obtencion de los datos se realizo mediante el uso de la [**API**](https://api.stackexchange.com/) de stackexchange.com y la biblioteca **stackr** desarrollada por [David Robinson](https://github.com/dgrtwo), todo el codigo y documentacion asociada se encuentra en el siguiente enlace [**StackMath**](https://github.com/Qalfredo/stackmath). 
 Inicialmente hacemos un llamado a la API para obtener la informacion general del sitio a traves de la funcion **stack_info()**:
@@ -56,28 +57,50 @@ kable(questions_mining[1:5,1:8])
 
 ```
 
-## Análisis Exploratorio
+Puede observarse en la tabla anterior que en el caso de la tarea de clasificación fue necesario discretizar la variable "score", usamos el siguiente criterio:
+$$ score>0 \Rightarrow score = 1$$
+$$ score<0 \Rightarrow score = -1$$
+$$ score = 0 \Rightarrow score = 0$$
+
+
+## **Análisis Exploratorio**
 
 #### Tags mas frecuentes y nube de palabras
 ```{r  echo=FALSE}
+library(wordcloud2)
 nube
 grafico.1
 
 ```
-#### Términos mas frecuentes dentro de las 10,000 preguntas
+
+### Términos mas frecuentes dentro de las 10,000 preguntas
 
 ```{r  echo=FALSE}
-grafico.2
-
+library(ggplot2)
+ ggplot(freq.terms.dataframe, aes(x = freq_terms,y = f)) + geom_bar(stat = "identity",  width = 0.5) + coord_flip() + xlab("Tags") + ylab("Frecuency") 
 ```
 
 
+### Comparación entre preguntas con respuesta válida y  sin respuesta
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+ggplot(questions,aes(x = is_answered)) + geom_histogram(stat = "count", width = 0.5) + xlab("Is answered") + ylab("Frequency")
+
 ```
+
+### ¿ Cuál es el Tag mas frecuente dentro de las preguntas sin respuesta ?
+
+El análisis muestra que en el 2015 el Tag mas frecuente dentro de las preguntas sin respuesta valida es "probability"
+
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+ggplot(freq.terms.noadataframe, aes(x = freq_noa_terms,y = f_noa)) + geom_bar(stat = "identity",  width = 0.3) + coord_flip() + xlab("Tags") + ylab("Frecuency")
+
+```
+
+  
 
 # Machine Learning
 ### Clasificación de preguntas dado el Score:
@@ -85,4 +108,4 @@ plot(pressure)
 
 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
