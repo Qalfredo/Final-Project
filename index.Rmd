@@ -1,0 +1,76 @@
+---
+title: "Final-Project"
+subtitle: "Predicting Question Score"
+output: 
+     prettydoc::html_pretty:
+         theme: cayman
+        
+
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r  include=FALSE, cache = TRUE}
+source("questions_preprocesing.R")
+
+```
+
+
+
+## Introduccion y Motivacion
+
+El desarrollo integral del estudiante de matemática se basa en la investigación y recopilación de
+información adicional a la estudiada en clases, llegar a profundizar un tema puede ser muy sencillo
+hoy en día con el acceso a internet, pero a medida que el estudiante avanza en su carrera empieza a
+dificultarse la búsqueda y recopilación de información dado a la complejidad de las asignaturas, en algunos casos surgen
+problemas de mayor dificultad que obligan a buscar ayuda profesional y en este caso salen a relucir
+sites o foros donde personas del área comparten dudas y conocimiento, en particular está el caso de
+[math.stackexchange.com](https://math.stackexchange.com), en el cual tanto profesores y alumnos participan en dicho intercambio de
+información. Este website resulta
+una herramienta útil para todo tipo de personas, además, es publica, gratuita y de fácil manejo, en él
+se hacen en promedio dos preguntas por minuto, y el tiempo promedio en obtener una respuesta es
+de 10 min, lo cual lo convierte en una fuente confiable para obtener respuestas a dudas emergentes, al
+menos para quien busca tener una idea de hacia dónde va dirigido el problema. Con mas de 1.372.2971
+preguntas y mas de 7.015.119 usuarios, [math.stackexchange.com](https://math.stackexchange.com) se ha convertido en una herramienta útil no solo para estudiantes de matemáticas puras si no para cualquier estudiante cuya carrera este ligada con esta ciencia.  
+
+El equipo esta interesado en determinar a traves de modelos de clasificacion y mineria de texto, si una pregunta hecha en el sitio tiene probabilidades de ser cerrada luego de una revision, ya sea por estar mal redact5ada, ser un duplicado de otra pregunta, etc. Además se quiere predecir el Score de una pregunta, la idea es identificar preguntas con baja calidad y hacer seguimiento de las mismas.
+
+## Los Datos
+
+El proceso de obtencion de los datos se realizo mediante el uso de la [**API**](https://api.stackexchange.com/) de stackexchange.com y la biblioteca **stackr** desarrollada por [David Robinson](https://github.com/dgrtwo), todo el codigo y documentacion asociada se encuentra en el siguiente enlace [**StackMath**](https://github.com/Qalfredo/stackmath). 
+Inicialmente hacemos un llamado a la API para obtener la informacion general del sitio a traves de la funcion **stack_info()**:
+
+```{r  echo = FALSE }
+library(knitr)
+kable(informacion)
+
+```
+
+Toda la manipulacion y limpieza de los datos se hizo usando las bibliotecas dplyr,tm,stringr. Se transformo el cuerpo de texto de cada pregunta en texto tratable: se eliminaron los signos de puntuacion, se removieron los numeros y palabras que no aportan informacion al modelo (stopwords). el resultado del preprocesamiento es una matris Termino-Documento, la funcion peso que consideramos fue TF-IDF Weight:
+
+
+```{r  echo = FALSE }
+library(knitr)
+kable(questions_mining[1:5,1:8])
+
+```
+
+## Análisis Exploratorio
+
+
+Aqui se muestran datos y estadisticas basicas
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+# Machine Learning
+### Clasificación de preguntas dado el Score:
+
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

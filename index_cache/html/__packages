@@ -1,0 +1,14 @@
+base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
+stackr
+NLP
+tm
+stringr
+dplyr
+wordcloud2
+e1071

@@ -1,0 +1,461 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Final-Project</title>
+
+
+
+
+
+
+<link rel="stylesheet" href="index_files/style.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<section class="page-header">
+<h1 class="title toc-ignore project-name">Final-Project</h1>
+<h3 class="subtitle project-tagline">Predicting Question Score</h3>
+</section>
+
+
+
+<section class="main-content">
+<div id="introduccion-y-motivacion" class="section level2">
+<h2>Introduccion y Motivacion</h2>
+<p>El desarrollo integral del estudiante de matemática se basa en la investigación y recopilación de información adicional a la estudiada en clases, llegar a profundizar un tema puede ser muy sencillo hoy en día con el acceso a internet, pero a medida que el estudiante avanza en su carrera empieza a dificultarse la búsqueda y recopilación de información dado a la complejidad de las asignaturas, en algunos casos surgen problemas de mayor dificultad que obligan a buscar ayuda profesional y en este caso salen a relucir sites o foros donde personas del área comparten dudas y conocimiento, en particular está el caso de <a href="https://math.stackexchange.com">math.stackexchange.com</a>, en el cual tanto profesores y alumnos participan en dicho intercambio de información. Este website resulta una herramienta útil para todo tipo de personas, además, es publica, gratuita y de fácil manejo, en él se hacen en promedio dos preguntas por minuto, y el tiempo promedio en obtener una respuesta es de 10 min, lo cual lo convierte en una fuente confiable para obtener respuestas a dudas emergentes, al menos para quien busca tener una idea de hacia dónde va dirigido el problema. Con mas de 1.372.2971 preguntas y mas de 7.015.119 usuarios, <a href="https://math.stackexchange.com">math.stackexchange.com</a> se ha convertido en una herramienta útil no solo para estudiantes de matemáticas puras si no para cualquier estudiante cuya carrera este ligada con esta ciencia.</p>
+<p>El equipo esta interesado en determinar a traves de modelos de clasificacion y mineria de texto, si una pregunta hecha en el sitio tiene probabilidades de ser cerrada luego de una revision, ya sea por estar mal redact5ada, ser un duplicado de otra pregunta, etc. Además se quiere predecir el Score de una pregunta, la idea es identificar preguntas con baja calidad y hacer seguimiento de las mismas.</p>
+</div>
+<div id="los-datos" class="section level2">
+<h2>Los Datos</h2>
+<p>El proceso de obtencion de los datos se realizo mediante el uso de la <a href="https://api.stackexchange.com/"><strong>API</strong></a> de stackexchange.com y la biblioteca <strong>stackr</strong> desarrollada por <a href="https://github.com/dgrtwo">David Robinson</a>, todo el codigo y documentacion asociada se encuentra en el siguiente enlace <a href="https://github.com/Qalfredo/stackmath"><strong>StackMath</strong></a>. Inicialmente hacemos un llamado a la API para obtener la informacion general del sitio a traves de la funcion <strong>stack_info()</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">new_active_users</th>
+<th align="right">total_users</th>
+<th align="right">badges_per_minute</th>
+<th align="right">total_badges</th>
+<th align="right">total_votes</th>
+<th align="right">total_comments</th>
+<th align="right">answers_per_minute</th>
+<th align="right">questions_per_minute</th>
+<th align="right">total_answers</th>
+<th align="right">total_accepted</th>
+<th align="right">total_unanswered</th>
+<th align="right">total_questions</th>
+<th align="left">api_revision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">7018726</td>
+<td align="right">4.88</td>
+<td align="right">22382243</td>
+<td align="right">99426156</td>
+<td align="right">67742828</td>
+<td align="right">4.72</td>
+<td align="right">2.99</td>
+<td align="right">21638022</td>
+<td align="right">7417895</td>
+<td align="right">3892004</td>
+<td align="right">13728707</td>
+<td align="left">2017.4.21.25514</td>
+</tr>
+</tbody>
+</table>
+<p>Toda la manipulacion y limpieza de los datos se hizo usando las bibliotecas dplyr,tm,stringr. Se transformo el cuerpo de texto de cada pregunta en texto tratable: se eliminaron los signos de puntuacion, se removieron los numeros y palabras que no aportan informacion al modelo (stopwords). el resultado del preprocesamiento es una matris Termino-Documento, la funcion peso que consideramos fue TF-IDF Weight:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">score</th>
+<th align="right">can</th>
+<th align="right">find</th>
+<th align="right">image</th>
+<th align="right">phow</th>
+<th align="right">sure</th>
+<th align="right">use</th>
+<th align="right">blockquote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="right">0.0657697</td>
+<td align="right">0.1074383</td>
+<td align="right">0.1896077</td>
+<td align="right">0.1703007</td>
+<td align="right">0.1617314</td>
+<td align="right">0.1375815</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">0.0100482</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0579357</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0210194</td>
+<td align="right">0.0332031</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0593489</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">0</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.1338077</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="analisis-exploratorio" class="section level2">
+<h2>Análisis Exploratorio</h2>
+<p>Aqui se muestran datos y estadisticas basicas</p>
+<p>You can also embed plots, for example:</p>
+<p><img src="index_files/figure-html/pressure-1.png" /><!-- --></p>
+</div>
+<div id="machine-learning" class="section level1">
+<h1>Machine Learning</h1>
+<div id="clasificacion-de-preguntas-dado-el-score" class="section level3">
+<h3>Clasificación de preguntas dado el Score:</h3>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+</div>
+</section>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
+=======
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Index</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Index</h1>
+
+</div>
+
+
+<div id="introduccion-y-motivacion" class="section level2">
+<h2>Introduccion y Motivacion</h2>
+<p>El desarrollo integral del estudiante de matemática se basa en la investigación y recopilación de información adicional a la estudiada en clases, llegar a profundizar un tema puede ser muy sencillo hoy en día con el acceso a internet, pero a medida que el estudiante avanza en su carrera empieza a dificultarse la búsqueda y recopilación de información dado a la complejidad de las asignaturas, en algunos casos surgen problemas de mayor dificultad que obligan a buscar ayuda profesional y en este caso salen a relucir sites o foros donde personas del área comparten dudas y conocimiento, en particular está el caso de <a href="https://math.stackexchange.com">math.stackexchange.com</a>, en el cual tanto profesores y alumnos participan en dicho intercambio de información. Este website resulta una herramienta útil para todo tipo de personas, además, es publica, gratuita y de fácil manejo, en él se hacen en promedio dos preguntas por minuto, y el tiempo promedio en obtener una respuesta es de 10 min, lo cual lo convierte en una fuente confiable para obtener respuestas a dudas emergentes, al menos para quien busca tener una idea de hacia dónde va dirigido el problema. Con mas de 1.372.2971 preguntas y mas de 7.015.119 usuarios, <a href="https://math.stackexchange.com">math.stackexchange.com</a> se ha convertido en una herramienta útil no solo para estudiantes de matemáticas puras si no para cualquier estudiante cuya carrera este ligada con esta ciencia.</p>
+<p>El equipo esta interesado en determinar a traves de modelos de clasificacion y mineria de texto, si una pregunta hecha en el sitio tiene probabilidades de ser cerrada luego de una revision, ya sea por estar mal redact5ada, ser un duplicado de otra pregunta, etc. Además se quiere predecir el Score de una pregunta, la idea es identificar preguntas con baja calidad y hacer seguimiento de las mismas.</p>
+</div>
+<div id="los-datos" class="section level2">
+<h2>Los Datos</h2>
+<p>El proceso de obtencion de los datos se realizo mediante el uso de la <a href="https://api.stackexchange.com/"><strong>API</strong></a> de stackexchange.com y la biblioteca <strong>stackr</strong> desarrollada por (usuario de github). Inicialmente hacemos un llamado a la API para obtener la informacion general del sitio a traves de la funcion <strong>stack_info()</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">new_active_users</th>
+<th align="right">total_users</th>
+<th align="right">badges_per_minute</th>
+<th align="right">total_badges</th>
+<th align="right">total_votes</th>
+<th align="right">total_comments</th>
+<th align="right">answers_per_minute</th>
+<th align="right">questions_per_minute</th>
+<th align="right">total_answers</th>
+<th align="right">total_accepted</th>
+<th align="right">total_unanswered</th>
+<th align="right">total_questions</th>
+<th align="left">api_revision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">7018726</td>
+<td align="right">4.88</td>
+<td align="right">22382243</td>
+<td align="right">99426156</td>
+<td align="right">67742828</td>
+<td align="right">4.72</td>
+<td align="right">2.99</td>
+<td align="right">21638022</td>
+<td align="right">7417895</td>
+<td align="right">3892004</td>
+<td align="right">13728707</td>
+<td align="left">2017.4.21.25514</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="index_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
+>>>>>>> 2005015ea375b8f5296283d5a588d9b187a4e096
