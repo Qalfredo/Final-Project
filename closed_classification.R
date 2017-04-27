@@ -35,53 +35,47 @@ load(file = "noclosed questions.Rdata")
  # We build the model
  vector.class <- c(rep(T,189),rep(F,1000))
 
- train <- sample(1:1189,832)
- test <- sample(c(1:1189)[-train],357)
+ train.sample <- sample(1:1189,832)
+ test.sample <- sample(c(1:1189)[-train.sample],357)
  
- closed.training <- as.matrix(closed_dtm)[train,]
- closed.testing <- as.matrix(closed_dtm)[test,]
+ closed.training <- as.matrix(closed_dtm)[train.sample,]
+ closed.testing <- as.matrix(closed_dtm)[test.sample,]
  
  
 # a svm model:
  
- closed.svm <- svm(closed.training, y= vector.class[train], kernel = "polynomial",type= "one-classification", cross = 10, cachesize = 200, nu= 0.4, degree = 7)
+ closed.svm <- svm(closed.training, y= vector.class[train.sample], kernel = "polynomial",type= "one-classification", cross = 10, cachesize = 200, nu= 0.4, degree = 7)
  
 
  pred.test = predict(closed.svm, closed.testing)
  
 
- table(pred.test,vector.class[test])
+ table(pred.test,vector.class[test.sample])
  
 # A tree based model:  
- 
- tree.model <- C5.0(x= closed.training, y = as.factor(vector.class[train]), trials = 5)
+
+ tree.model <- C5.0(x= closed.training, y = as.factor(vector.class[train.sample]), trials = 20)
  p <- predict(tree.model,closed.testing)
- table(p ,as.factor(vector.class[test]))
+ table(p ,as.factor(vector.class[test.sample]))
 
 # A naive bayes model  
  
  vector.class.2 <- c(rep("T",189),rep("F",1000))
-closed.test <- cbind(closed.testing,vector.class.2[test])
-closed.train <- cbind(closed.training, vector.class.2[train])
+closed.test <- cbind(closed.testing,vector.class.2[test.sample])
+closed.train <- cbind(closed.training, vector.class.2[train.sample])
 colnames(closed.train)[57] <- "funcion"
 colnames(closed.test)[57] <- "funcion"
-naive.closed.model <- naiveBayes(x = closed.training , y = vector.class[train] , data = closed.train)
+naive.closed.model <- naiveBayes(x = closed.training , y = vector.class[train.sample] , data = closed.train)
 p1 <- predict(naive.closed.model,closed.testing) 
-table(p1, vector.class.2[test]) 
+table(p1, vector.class.2[test.sample]) 
  
 
 
 
 
-# we want to know what means the svm model
 
-w <- t(model.svm$coefs) %*% closed.training[model.svm$index,]
 
-w <- as.data.frame(w)
-df <- data.frame(term = colnames(w), weight = as.numeric(w[1,1:125 ]))
 
-ggplot(df, aes(x = term , y = weight)) + geom_bar(stat = "identity",  width = 0.3) + coord_flip() + xlab("Tags") + ylab("Frecuency") 
 
-df <- filter(df, weight >= 4)
 
-ggplot(df)
+

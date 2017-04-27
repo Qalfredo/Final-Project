@@ -15,9 +15,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r  include=FALSE, cache=TRUE}
 source("score_classification.R")
 source("exploratory_analysis.R")
+source("closed_classification.R")
 ```
 
+```{r  include=FALSE, cache=TRUE}
+source("score_regression.R")
 
+```
 
 ## **Introducción y Motivación**
 
@@ -63,9 +67,27 @@ $$ score<0 \Rightarrow score = -1$$
 $$ score = 0 \Rightarrow score = 0$$
 
 
+
 ## **Análisis Exploratorio**
 
-#### Tags mas frecuentes y nube de palabras
+### Relaciones entre las variables númericas
+
+```{r  echo=FALSE}
+library(ggplot2)
+layout(matrix(c(1,1,2,3), 2, 2, byrow = TRUE))
+ ggplot(questions, aes(x = questions$score, y = questions$view_count)) + geom_point(size = 0.9, aes(colour = factor(questions$is_answered)) ) + xlab("Score") + ylab("Visualizaciones") + scale_color_discrete(name= "Respuesta válida")
+
+ggplot(questions, aes(x = questions$answer_count, y = questions$score)) + geom_point(size = 0.9, aes(colour = factor(questions$is_answered)) ) + xlab("Respuestas") + ylab("Score") + scale_color_discrete(name = "Respuesta válida")
+
+
+ ggplot(cloo, aes(x = cloo$score, y = cloo$view_count)) + geom_point(size = 3, aes(colour = factor(cloo$is_closed)) , alpha =0.3) + ylab ("Visualizaciones") + xlab("Score") + scale_color_discrete(name= "Cerrada")
+
+
+
+```
+
+
+#### Tags mas frecuentes en el sitio y nube de palabras
 ```{r  echo=FALSE}
 library(wordcloud2)
 nube
@@ -73,7 +95,7 @@ grafico.1
 
 ```
 
-### Términos mas frecuentes dentro de las 10,000 preguntas
+### Tags mas frecuentes dentro de las 10,000 preguntas
 
 ```{r  echo=FALSE}
 library(ggplot2)
@@ -100,10 +122,145 @@ ggplot(freq.terms.noadataframe, aes(x = freq_noa_terms,y = f_noa)) + geom_bar(st
 
 ```
 
+## Exploración mediante series temporales 
+
+
   
 
-# Machine Learning
-### Clasificación de preguntas dado el Score:
+#  **Machine Learning**
+Para esta tarea se realizo el tratamiento de los datos antes descrito y además se uso una division del conjunto de datos en subconjunto de entrenamiento (70%) y subconjunto de prueba (30%).
+
+#### Métricas para la evaluación del rendimiento de los modelos
+
+$$Sensitivity= \dfrac{TP}{TP+FN}$$
+
+$$Specificity = \dfrac{TN}{TN+FP} $$
+$$Accuracy = \dfrac{TP+FN}{TP+FN+TN+FP} $$
+$$RMSE = \sqrt{\dfrac{1}{N}\sum (Obs-Pred)^2} $$
+
+
+## Clasificación de preguntas según el Score:
+
+Se tomaron en cuenta dos algoritmos de clasificación:
+
+ - SVM (Support Vector Machine)
+ - NaiveBayes ( Naive Bayes Ingenuo)
+
+
+
+```{r  echo=TRUE, message=FALSE, cache=TRUE}
+library(e1071)
+
+model.svm 
+
+
+pred.svm = predict(model.svm, question.testing)
+
+
+table(question.testing$score,pred.svm,dnn=c("Obs","Pred"))
+```
+
+
+
+```{r  echo=TRUE, message=FALSE, cache=TRUE}
+library(e1071)
+
+train <- sample(1:10000,7000)
+test <- sample(c(1:10000)[-train],3000)
+naive.questions <- naiveBayes(x= as.matrix(questions_dtm)[train,], y = questions_mining$score[train])
+
+pp <- predict(naive.questions,question.testing) 
+
+
+
+table(pp, questions_mining$score[test],dnn=c("Obs","Pred")) 
+
+```
+
+## Predicción del Score de una pregunta
+
+Se tomo en cuenta el algoritmo svm como máquina de regresión.
+
+
+```{r  echo=TRUE, message=FALSE, cache=TRUE}
+library(e1071)
+
+model.svr 
+
+
+```
+
+```{r  echo=TRUE, message=FALSE, cache=TRUE}
+
+rmse <- function(error)
+{
+  sqrt(mean(error^2))
+}
+rmse(error)
+
+
+```
+
+Además de considerar el RSME como medida de rendimiento del modelo, en este caso establecimos que un margen optimo para nuestro problema es de 1.5, es decrir, $$ |error|\leq 1.5.$$
+Con un cálculo bastante sencillo se concluye que el modelo "predice" el Score de una pregunta dentro de este margen en un 79.5% de los casos.
+```{r  echo=TRUE, message=FALSE}
+
+count = 0
+for(i in 1:600){
+  if (abs(error[i]) <= 1.5){count = count + 1}else{count = count}
+}
+count 
+
+
+```
+
+
+## Clasificación de preguntas Cerradas
+
+Se tomaron en cuenta 3 algoritmos de clasificacion:
+-SVM (Support Vector Machine)
+-NaiveBayes (Naive Bayes Ingenuo)
+-C5.0 (Arbol de Decisión)
+
+
+```{r  echo=TRUE, message=FALSE, cache=TRUE}
+
+ train.sample <- sample(1:1189,832)
+ test.sample <- sample(c(1:1189)[-train.sample],357)
+
+closed.svm
+
+table(pred.test,vector.class[test.sample])
+
+
+
+```
+
+
+
+```{r  echo=TRUE, message=FALSE}
+
+ ## tree.model <- C5.0(x= closed.training, y = as.factor(vector.class[train.sample]), trials = 20)
+table(p ,as.factor(vector.class[test.sample]))
+
+
+
+```
+
+
+
+```{r  echo=TRUE, message=FALSE, cache=TRUE}
+
+
+# naive.closed.model <- naiveBayes(x = closed.training , y = vector.class[train.sample] , data = closed.train)
+
+table(p1, vector.class.2[test.sample])
+
+
+```
+
+
+
 
 
 

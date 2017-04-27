@@ -3,7 +3,12 @@ library(tm)
 library(stringr)
 library(wordcloud2)
 library(dplyr)
+
 load(file = "tags.Rdata")
+load( file = "questions_2015.Rdata")
+load(file = "closed questions.Rdata")
+load(file = "noclosed questions.Rdata")
+
 df <- select(tags, name, count)
 nube <- wordcloud2(df, size = 0.8, shape = "circle")
 grafico.1 <- ggplot(df[1:20, ], aes(x = name, y = count)) + geom_bar(stat = "identity", width = 0.5) + coord_flip()
@@ -91,17 +96,20 @@ grafico.4 <- ggplot(freq.terms.noadataframe, aes(x = freq_noa_terms,y = f_noa)) 
 
 
 
+# we build the scatter plots
+
+ggplot(questions, aes(x = questions$score, y = questions$view_count)) + geom_point(size = 0.9, aes(colour = factor(questions$is_answered)) ) + xlab("Score") + ylab("Visualizaciones") + scale_color_discrete(name= "Respuesta válida")
+
+ggplot(questions, aes(x = questions$answer_count, y = questions$score)) + geom_point(size = 0.9, aes(colour = factor(questions$is_answered)) ) + xlab("Respuestas") + ylab("Score") + scale_color_discrete(name = "Respuesta válida")
 
 
 
+clo <- select(closed.questions, is_answered, score, view_count, answer_count)
+clo2 <- select(noclosed.questions, is_answered, score, view_count, answer_count)
+cloo <- rbind(clo, clo2)
+cloo$"is_closed" <- c(rep(T,189),rep(F,1000))
 
-
-
-
-
-
-
-
+ggplot(cloo, aes(x = cloo$score, y = cloo$view_count)) + geom_point(size = 3, aes(colour = factor(cloo$is_closed)) , alpha =0.3) + ylab ("Visualizaciones") + xlab("Score") + scale_color_discrete(name= "Cerrada")
 
 
 

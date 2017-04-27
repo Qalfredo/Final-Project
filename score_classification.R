@@ -76,7 +76,7 @@ pp <- predict(naive.questions,question.testing)
 table(pp, questions_mining$score[test]) 
 
 
-plot(model.svm,questions.training, can ~ image )
+
 
 
 

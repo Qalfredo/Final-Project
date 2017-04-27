@@ -22,6 +22,44 @@
 <script src="site_libs/wordcloud2-binding-0.2.0/wordcloud2.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 
 
@@ -94,33 +132,33 @@
 <th align="left">score</th>
 <th align="right">can</th>
 <th align="right">find</th>
+<th align="right">how</th>
 <th align="right">image</th>
-<th align="right">phow</th>
 <th align="right">sure</th>
 <th align="right">use</th>
-<th align="right">blockquote</th>
+<th align="right">assume</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">0</td>
-<td align="right">0.0657697</td>
-<td align="right">0.1074383</td>
+<td align="right">0.0607136</td>
+<td align="right">0.1016902</td>
+<td align="right">0.1316089</td>
 <td align="right">0.1896077</td>
-<td align="right">0.1703007</td>
 <td align="right">0.1617314</td>
-<td align="right">0.1375815</td>
+<td align="right">0.1361541</td>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="right">0.0100482</td>
-<td align="right">0.0000000</td>
-<td align="right">0.0579357</td>
+<td align="right">0.0094063</td>
 <td align="right">0.0000000</td>
 <td align="right">0.0000000</td>
-<td align="right">0.0210194</td>
-<td align="right">0.0332031</td>
+<td align="right">0.0587517</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0210943</td>
+<td align="right">0.0297108</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
@@ -129,7 +167,7 @@
 <td align="right">0.0000000</td>
 <td align="right">0.0000000</td>
 <td align="right">0.0000000</td>
-<td align="right">0.0593489</td>
+<td align="right">0.0587332</td>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
@@ -146,8 +184,8 @@
 <td align="left">1</td>
 <td align="right">0.0000000</td>
 <td align="right">0.0000000</td>
+<td align="right">0.2068139</td>
 <td align="right">0.0000000</td>
-<td align="right">0.1338077</td>
 <td align="right">0.0000000</td>
 <td align="right">0.0000000</td>
 <td align="right">0.0000000</td>
@@ -158,30 +196,168 @@
 </div>
 <div id="analisis-exploratorio" class="section level2">
 <h2><strong>Análisis Exploratorio</strong></h2>
-<div id="tags-mas-frecuentes-y-nube-de-palabras" class="section level4">
-<h4>Tags mas frecuentes y nube de palabras</h4>
-<p><div id="htmlwidget-3aa8eac2dd729cbb3a04" style="width:672px;height:480px;" class="wordcloud2 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3aa8eac2dd729cbb3a04">{"x":{"word":["calculus","real-analysis","linear-algebra","probability","abstract-algebra","integration","sequences-and-series","general-topology","combinatorics","matrices","complex-analysis","algebra-precalculus","group-theory","geometry","functional-analysis","analysis","number-theory","differential-equations","limits","elementary-number-theory","probability-theory","statistics","measure-theory","functions","multivariable-calculus","discrete-mathematics","trigonometry","elementary-set-theory","derivatives","differential-geometry","inequality","algebraic-geometry","logic","polynomials","proof-verification","probability-distributions","graph-theory","reference-request","ring-theory","convergence","pde","algebraic-topology","optimization","definite-integrals","vector-spaces","complex-numbers","commutative-algebra","summation","soft-question","metric-spaces","stochastic-processes","continuity","numerical-methods","finite-groups","algorithms","proof-writing","field-theory","prime-numbers","notation","category-theory","eigenvalues-eigenvectors","permutations","fourier-analysis","modular-arithmetic","induction","logarithms","vectors","random-variables","modules","recurrence-relations","set-theory","asymptotics","representation-theory","terminology","operator-theory","power-series","manifolds","convex-analysis","arithmetic","galois-theory","taylor-expansion","algebraic-number-theory","binomial-coefficients","contest-math","improper-integrals","exponential-function","hilbert-spaces","differential-topology","definition","divisibility","computer-science","lie-groups","lebesgue-integral","systems-of-equations","combinations","euclidean-geometry","banach-spaces","diophantine-equations","linear-transformations","riemannian-geometry","normal-distribution","lebesgue-measure","ideals","determinant","analytic-geometry","lie-algebras","norm","dynamical-systems","roots","fourier-series","partial-derivative","expectation","physics","circle","compactness","special-functions","indefinite-integrals","triangle","convex-optimization","vector-analysis","self-learning","recreational-mathematics","sobolev-spaces","graphing-functions","finite-fields","examples-counterexamples","markov-chains","relations","exponentiation","stochastic-calculus","propositional-calculus","inverse","homological-algebra","normed-spaces","homology-cohomology","intuition","linear-programming","proof-explanation","quadratics","lp-spaces","approximation","education","problem-solving","extension-field","conic-sections","laplace-transform","generating-functions","inner-product-space","matlab","factorial","order-theory","mathematical-physics","tensor-products","analytic-number-theory","puzzle","contour-integration","transformation","abelian-groups","homotopy-theory","cardinals","brownian-motion","closed-form","functional-equations","computational-complexity","uniform-convergence","math-history","real-numbers","model-theory","factoring","predicate-logic","3d","coordinate-systems","game-theory","radicals","matrix-equations","smooth-manifolds","numerical-linear-algebra","boolean-algebra","book-recommendation","first-order-logic","congruences","distribution-theory","statistical-inference","equivalence-relations","polar-coordinates","area","irreducible-polynomials","differential-forms","volume","rotations","surfaces","finance","operator-algebras","parametric","tensors","connectedness","regression","fractions","elliptic-curves","infinity","algebraic-curves","absolute-value","martingales","alternative-proof","spectral-theory","computability","calculus-of-variations","gamma-function","complex-geometry","convolution","harmonic-analysis","nonlinear-optimization","solution-verification","conditional-expectation","matrix-calculus","residue-calculus","irrational-numbers","sheaf-theory","recursion","fibonacci-numbers","symmetric-groups","vector-bundles","riemann-zeta","axiom-of-choice","signal-processing","projective-geometry","c-star-algebras","big-list","complex-integration","limits-without-lhopital","random","automata","formal-languages","interpolation","mathematical-modeling","lagrange-multiplier","cryptography","topological-groups","group-actions","partitions","epsilon-delta","markov-process","divergent-series","curves","rational-numbers","schemes","stochastic-integrals","quadratic-forms","binomial-theorem","supremum-and-infimum","random-walk","harmonic-functions","machine-learning","orthogonality","information-theory","cauchy-sequences","diagonalization","limsup-and-liminf","cyclic-groups","coding-theory","riemann-surfaces","trees","prime-factorization","weak-convergence","uniform-continuity","ordinals","products","binary","matrix-decomposition","conditional-probability","integers","greatest-common-divisor","stochastic-analysis","hyperbolic-geometry","classical-mechanics","dice","uniform-distribution","p-adic-number-theory","fourier-transform","average","applications","economics","estimation","control-theory","computational-mathematics","normal-subgroups","pi","poisson-distribution","nonlinear-system","fixed-point-theorems","recursive-algorithms","axioms","laurent-series","banach-algebras","bayesian","matrix-rank","quantifiers","standard-deviation","noncommutative-algebra","math-software","plane-curves","topological-vector-spaces","regular-language","floor-function","lattice-orders","independence","geometric-topology","curvature","group-isomorphism","covariance","computational-geometry","quaternions","sylow-theory","algebraic-groups","correlation","covering-spaces","implicit-differentiation","periodic-functions","partial-fractions","analyticity","percentages","infinite-product","multilinear-algebra","dirac-delta","spherical-coordinates","boundary-value-problem","least-squares","philosophy","fundamental-groups","bessel-functions","pigeonhole-principle","riemann-sum","context-free-grammar","projective-space","decimal-expansion","fractals","continued-fractions","riemann-integration","ergodic-theory","fake-proofs","trace","modular-forms","binomial-distribution","foundations","quantum-mechanics","function-composition","symmetry","differential","conformal-geometry","orthonormal","inclusion-exclusion","entropy","heat-equation","vector-fields","duality-theorems","advice","semigroups","number-systems","coloring","means","hypergeometric-function","totient-function","bayes-theorem","group-homomorphism","sampling","data-analysis","polygons","stopping-times","hyperbolic-functions","maple","affine-geometry","quotient-spaces","integral-equations","compact-operators","rational-functions","hypothesis-testing","square-numbers","characteristic-functions","integral-inequality","svd","descriptive-set-theory","jordan-normal-form","central-limit-theorem","word-problem","polyhedra","integer-programming","fiber-bundles","bilinear-form","cross-product","combinatorial-game-theory","symplectic-geometry","conjectures","characters","knot-theory","lipschitz-functions","variance","surface-integrals","exterior-algebra","approximation-theory","numerical-optimization","cubic-equations","filters","proof-theory","wave-equation","spherical-geometry","exact-sequence","learning","visualization","fluid-dynamics","roots-of-unity","integral-transforms","turing-machines","probability-limit-theorem","geometric-construction","ratio","trigonometric-series","principal-ideal-domains","spheres","substitution","free-groups","order-statistics","mathematica","prime-ideals","moment-generating-functns","time-series","transcendental-numbers","incompleteness","orthogonal-polynomials","algebraic-graph-theory","group-cohomology","chinese-remainder-theorem","density-function","combinatorial-geometry","bounded-variation","monte-carlo","inverse-function","quadratic-residues","dimension-theory","integral-domain","integer-lattices","universal-algebra","abelian-categories","online-resources","monoid","von-neumann-algebras","plane-geometry","minimal-polynomials","symmetric-polynomials","regular-expressions","noetherian","laplacian","image-processing","geometric-measure-theory","harmonic-numbers","peano-axioms","maxima-minima","geodesic","solid-geometry","card-games","forcing","angle","wolfram-alpha","pattern-recognition","np-complete","queueing-theory","binary-operations","adjoint","estimation-theory","positive-definite","finite-differences","zeta-functions","geometric-group-theory","gre-exam","projective-module","line-integrals","poisson-process","eigenfunctions","bezier-curve","law-of-large-numbers","divisor-sum","localization","random-graphs","implicit-function-theorem","computer-algebra-systems","perturbation-theory","several-complex-variables","parameter-estimation","discrete-optimization","natural-deduction","ramsey-theory","simplex","splitting-field","simulation","nested-radicals","isometry","arithmetic-geometry","actuarial-science","paradoxes","spline","natural-numbers"],"freq":[66586,63440,58099,46009,41866,33988,30391,26384,26357,25344,24746,24141,24057,22598,22290,21094,20943,20491,19753,19353,17652,16675,16495,16259,15508,15463,14609,14184,13810,13515,13025,13012,12209,11870,11509,11368,11153,10976,10131,9833,9703,9509,8836,8788,8563,8538,7685,7642,7055,7048,6759,6634,6627,6546,6447,6229,6172,6124,6097,6039,5919,5803,5463,4986,4865,4695,4578,4526,4426,4378,4356,4223,4189,4173,4160,3831,3802,3731,3722,3538,3509,3500,3489,3478,3417,3385,3369,3249,3230,3146,3140,3083,3070,3058,3023,2940,2913,2902,2901,2882,2843,2843,2841,2840,2839,2801,2747,2724,2698,2697,2693,2691,2674,2648,2646,2639,2587,2583,2582,2529,2502,2498,2466,2432,2425,2411,2405,2384,2293,2225,2193,2176,2173,2172,2153,2144,2125,2121,2112,2090,2056,2012,1981,1972,1961,1958,1932,1900,1883,1839,1828,1827,1822,1798,1783,1770,1756,1753,1733,1729,1718,1693,1691,1683,1675,1643,1634,1628,1626,1607,1586,1581,1575,1564,1555,1550,1522,1491,1481,1465,1463,1460,1434,1428,1413,1373,1369,1358,1335,1320,1320,1318,1315,1306,1300,1300,1299,1283,1282,1281,1280,1279,1274,1265,1265,1248,1243,1243,1243,1233,1232,1176,1175,1157,1156,1153,1150,1146,1136,1135,1111,1108,1090,1084,1081,1058,1049,1047,1047,1047,1044,1037,1032,1030,1024,1023,1020,992,992,987,984,982,979,975,965,965,964,952,946,946,945,941,932,931,927,914,908,905,902,899,896,889,887,884,878,866,840,829,829,828,826,819,819,817,813,803,803,799,793,792,791,790,790,789,787,786,782,781,776,772,768,764,763,756,751,750,748,748,746,743,740,735,735,733,726,721,709,702,702,696,686,683,680,670,667,666,658,649,649,647,647,639,639,625,623,621,608,606,596,594,593,592,587,586,583,582,578,577,576,568,568,567,565,564,564,561,558,558,557,555,553,551,551,550,548,546,542,541,541,536,534,533,532,532,528,526,525,517,513,512,511,509,507,506,503,503,502,497,488,487,484,482,481,481,481,475,474,470,465,464,463,463,462,459,456,456,453,450,450,449,447,445,443,441,440,438,437,434,434,433,432,424,423,423,422,418,418,414,411,406,405,402,402,402,399,399,396,396,391,390,388,387,385,383,381,378,375,374,373,371,370,370,369,367,367,367,366,365,365,364,362,361,359,359,359,359,352,351,350,349,346,345,344,342,340,340,339,339,338,337,337,337,337,334,333,333,329,329,328,327,322,319,319,319,318,318,317,316,314,313,311,309,309,308,304,304,303,303,302,300],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":0.00216261676628721,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script><img src="index_files/figure-html/unnamed-chunk-4-2.png" /><!-- --></p>
+<div id="relaciones-entre-las-variables-numericas" class="section level3">
+<h3>Relaciones entre las variables númericas</h3>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" /><!-- --><img src="index_files/figure-html/unnamed-chunk-5-2.png" /><!-- --><img src="index_files/figure-html/unnamed-chunk-5-3.png" /><!-- --></p>
+<div id="tags-mas-frecuentes-en-el-sitio-y-nube-de-palabras" class="section level4">
+<h4>Tags mas frecuentes en el sitio y nube de palabras</h4>
+<p><div id="htmlwidget-937b4b0d0e95471cfc89" style="width:672px;height:480px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-937b4b0d0e95471cfc89">{"x":{"word":["calculus","real-analysis","linear-algebra","probability","abstract-algebra","integration","sequences-and-series","general-topology","combinatorics","matrices","complex-analysis","algebra-precalculus","group-theory","geometry","functional-analysis","analysis","number-theory","differential-equations","limits","elementary-number-theory","probability-theory","statistics","measure-theory","functions","multivariable-calculus","discrete-mathematics","trigonometry","elementary-set-theory","derivatives","differential-geometry","inequality","algebraic-geometry","logic","polynomials","proof-verification","probability-distributions","graph-theory","reference-request","ring-theory","convergence","pde","algebraic-topology","optimization","definite-integrals","vector-spaces","complex-numbers","commutative-algebra","summation","soft-question","metric-spaces","stochastic-processes","continuity","numerical-methods","finite-groups","algorithms","proof-writing","field-theory","prime-numbers","notation","category-theory","eigenvalues-eigenvectors","permutations","fourier-analysis","modular-arithmetic","induction","logarithms","vectors","random-variables","modules","recurrence-relations","set-theory","asymptotics","representation-theory","terminology","operator-theory","power-series","manifolds","convex-analysis","arithmetic","galois-theory","taylor-expansion","algebraic-number-theory","binomial-coefficients","contest-math","improper-integrals","exponential-function","hilbert-spaces","differential-topology","definition","divisibility","computer-science","lie-groups","lebesgue-integral","systems-of-equations","combinations","euclidean-geometry","banach-spaces","diophantine-equations","linear-transformations","riemannian-geometry","normal-distribution","lebesgue-measure","ideals","determinant","analytic-geometry","lie-algebras","norm","dynamical-systems","roots","fourier-series","partial-derivative","expectation","physics","circle","compactness","special-functions","indefinite-integrals","triangle","convex-optimization","vector-analysis","self-learning","recreational-mathematics","sobolev-spaces","graphing-functions","finite-fields","examples-counterexamples","markov-chains","relations","exponentiation","stochastic-calculus","propositional-calculus","inverse","homological-algebra","normed-spaces","homology-cohomology","intuition","linear-programming","proof-explanation","quadratics","lp-spaces","approximation","education","problem-solving","extension-field","conic-sections","laplace-transform","generating-functions","inner-product-space","matlab","factorial","order-theory","mathematical-physics","tensor-products","analytic-number-theory","puzzle","contour-integration","transformation","abelian-groups","homotopy-theory","cardinals","brownian-motion","closed-form","functional-equations","computational-complexity","uniform-convergence","math-history","real-numbers","model-theory","factoring","predicate-logic","3d","coordinate-systems","game-theory","radicals","matrix-equations","smooth-manifolds","numerical-linear-algebra","boolean-algebra","book-recommendation","first-order-logic","congruences","distribution-theory","statistical-inference","equivalence-relations","polar-coordinates","area","irreducible-polynomials","differential-forms","volume","rotations","surfaces","finance","operator-algebras","parametric","tensors","connectedness","regression","fractions","elliptic-curves","infinity","algebraic-curves","absolute-value","martingales","alternative-proof","spectral-theory","computability","calculus-of-variations","gamma-function","complex-geometry","convolution","harmonic-analysis","nonlinear-optimization","solution-verification","conditional-expectation","matrix-calculus","residue-calculus","irrational-numbers","sheaf-theory","recursion","fibonacci-numbers","symmetric-groups","vector-bundles","riemann-zeta","axiom-of-choice","signal-processing","projective-geometry","c-star-algebras","big-list","complex-integration","limits-without-lhopital","random","automata","formal-languages","interpolation","mathematical-modeling","lagrange-multiplier","cryptography","topological-groups","group-actions","partitions","epsilon-delta","markov-process","divergent-series","curves","rational-numbers","schemes","stochastic-integrals","quadratic-forms","binomial-theorem","supremum-and-infimum","random-walk","harmonic-functions","machine-learning","orthogonality","information-theory","cauchy-sequences","diagonalization","limsup-and-liminf","cyclic-groups","coding-theory","riemann-surfaces","trees","prime-factorization","weak-convergence","uniform-continuity","ordinals","products","binary","matrix-decomposition","conditional-probability","integers","greatest-common-divisor","stochastic-analysis","hyperbolic-geometry","classical-mechanics","dice","uniform-distribution","p-adic-number-theory","fourier-transform","average","applications","economics","estimation","control-theory","computational-mathematics","normal-subgroups","pi","poisson-distribution","nonlinear-system","fixed-point-theorems","recursive-algorithms","axioms","laurent-series","banach-algebras","bayesian","matrix-rank","quantifiers","standard-deviation","noncommutative-algebra","math-software","plane-curves","topological-vector-spaces","regular-language","floor-function","lattice-orders","independence","geometric-topology","curvature","group-isomorphism","covariance","computational-geometry","quaternions","sylow-theory","algebraic-groups","correlation","covering-spaces","implicit-differentiation","periodic-functions","partial-fractions","analyticity","percentages","infinite-product","multilinear-algebra","dirac-delta","spherical-coordinates","boundary-value-problem","least-squares","philosophy","fundamental-groups","bessel-functions","pigeonhole-principle","riemann-sum","context-free-grammar","projective-space","decimal-expansion","fractals","continued-fractions","riemann-integration","ergodic-theory","fake-proofs","trace","modular-forms","binomial-distribution","foundations","quantum-mechanics","function-composition","symmetry","differential","conformal-geometry","orthonormal","inclusion-exclusion","entropy","heat-equation","vector-fields","duality-theorems","advice","semigroups","number-systems","coloring","means","hypergeometric-function","totient-function","bayes-theorem","group-homomorphism","sampling","data-analysis","polygons","stopping-times","hyperbolic-functions","maple","affine-geometry","quotient-spaces","integral-equations","compact-operators","rational-functions","hypothesis-testing","square-numbers","characteristic-functions","integral-inequality","svd","descriptive-set-theory","jordan-normal-form","central-limit-theorem","word-problem","polyhedra","integer-programming","fiber-bundles","bilinear-form","cross-product","combinatorial-game-theory","symplectic-geometry","conjectures","characters","knot-theory","lipschitz-functions","variance","surface-integrals","exterior-algebra","approximation-theory","numerical-optimization","cubic-equations","filters","proof-theory","wave-equation","spherical-geometry","exact-sequence","learning","visualization","fluid-dynamics","roots-of-unity","integral-transforms","turing-machines","probability-limit-theorem","geometric-construction","ratio","trigonometric-series","principal-ideal-domains","spheres","substitution","free-groups","order-statistics","mathematica","prime-ideals","moment-generating-functns","time-series","transcendental-numbers","incompleteness","orthogonal-polynomials","algebraic-graph-theory","group-cohomology","chinese-remainder-theorem","density-function","combinatorial-geometry","bounded-variation","monte-carlo","inverse-function","quadratic-residues","dimension-theory","integral-domain","integer-lattices","universal-algebra","abelian-categories","online-resources","monoid","von-neumann-algebras","plane-geometry","minimal-polynomials","symmetric-polynomials","regular-expressions","noetherian","laplacian","image-processing","geometric-measure-theory","harmonic-numbers","peano-axioms","maxima-minima","geodesic","solid-geometry","card-games","forcing","angle","wolfram-alpha","pattern-recognition","np-complete","queueing-theory","binary-operations","adjoint","estimation-theory","positive-definite","finite-differences","zeta-functions","geometric-group-theory","gre-exam","projective-module","line-integrals","poisson-process","eigenfunctions","bezier-curve","law-of-large-numbers","divisor-sum","localization","random-graphs","implicit-function-theorem","computer-algebra-systems","perturbation-theory","several-complex-variables","parameter-estimation","discrete-optimization","natural-deduction","ramsey-theory","simplex","splitting-field","simulation","nested-radicals","isometry","arithmetic-geometry","actuarial-science","paradoxes","spline","natural-numbers"],"freq":[66586,63440,58099,46009,41866,33988,30391,26384,26357,25344,24746,24141,24057,22598,22290,21094,20943,20491,19753,19353,17652,16675,16495,16259,15508,15463,14609,14184,13810,13515,13025,13012,12209,11870,11509,11368,11153,10976,10131,9833,9703,9509,8836,8788,8563,8538,7685,7642,7055,7048,6759,6634,6627,6546,6447,6229,6172,6124,6097,6039,5919,5803,5463,4986,4865,4695,4578,4526,4426,4378,4356,4223,4189,4173,4160,3831,3802,3731,3722,3538,3509,3500,3489,3478,3417,3385,3369,3249,3230,3146,3140,3083,3070,3058,3023,2940,2913,2902,2901,2882,2843,2843,2841,2840,2839,2801,2747,2724,2698,2697,2693,2691,2674,2648,2646,2639,2587,2583,2582,2529,2502,2498,2466,2432,2425,2411,2405,2384,2293,2225,2193,2176,2173,2172,2153,2144,2125,2121,2112,2090,2056,2012,1981,1972,1961,1958,1932,1900,1883,1839,1828,1827,1822,1798,1783,1770,1756,1753,1733,1729,1718,1693,1691,1683,1675,1643,1634,1628,1626,1607,1586,1581,1575,1564,1555,1550,1522,1491,1481,1465,1463,1460,1434,1428,1413,1373,1369,1358,1335,1320,1320,1318,1315,1306,1300,1300,1299,1283,1282,1281,1280,1279,1274,1265,1265,1248,1243,1243,1243,1233,1232,1176,1175,1157,1156,1153,1150,1146,1136,1135,1111,1108,1090,1084,1081,1058,1049,1047,1047,1047,1044,1037,1032,1030,1024,1023,1020,992,992,987,984,982,979,975,965,965,964,952,946,946,945,941,932,931,927,914,908,905,902,899,896,889,887,884,878,866,840,829,829,828,826,819,819,817,813,803,803,799,793,792,791,790,790,789,787,786,782,781,776,772,768,764,763,756,751,750,748,748,746,743,740,735,735,733,726,721,709,702,702,696,686,683,680,670,667,666,658,649,649,647,647,639,639,625,623,621,608,606,596,594,593,592,587,586,583,582,578,577,576,568,568,567,565,564,564,561,558,558,557,555,553,551,551,550,548,546,542,541,541,536,534,533,532,532,528,526,525,517,513,512,511,509,507,506,503,503,502,497,488,487,484,482,481,481,481,475,474,470,465,464,463,463,462,459,456,456,453,450,450,449,447,445,443,441,440,438,437,434,434,433,432,424,423,423,422,418,418,414,411,406,405,402,402,402,399,399,396,396,391,390,388,387,385,383,381,378,375,374,373,371,370,370,369,367,367,367,366,365,365,364,362,361,359,359,359,359,352,351,350,349,346,345,344,342,340,340,339,339,338,337,337,337,337,334,333,333,329,329,328,327,322,319,319,319,318,318,317,316,314,313,311,309,309,308,304,304,303,303,302,300],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":0.00216261676628721,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script><img src="index_files/figure-html/unnamed-chunk-6-2.png" /><!-- --></p>
 </div>
-<div id="terminos-mas-frecuentes-dentro-de-las-10000-preguntas" class="section level3">
-<h3>Términos mas frecuentes dentro de las 10,000 preguntas</h3>
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" /><!-- --></p>
+</div>
+<div id="tags-mas-frecuentes-dentro-de-las-10000-preguntas" class="section level3">
+<h3>Tags mas frecuentes dentro de las 10,000 preguntas</h3>
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" /><!-- --></p>
 </div>
 <div id="comparacion-entre-preguntas-con-respuesta-valida-y-sin-respuesta" class="section level3">
 <h3>Comparación entre preguntas con respuesta válida y sin respuesta</h3>
 <pre><code>## Warning: Ignoring unknown parameters: binwidth, bins, pad</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" /><!-- --></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" /><!-- --></p>
 </div>
 <div id="cual-es-el-tag-mas-frecuente-dentro-de-las-preguntas-sin-respuesta" class="section level3">
 <h3>¿ Cuál es el Tag mas frecuente dentro de las preguntas sin respuesta ?</h3>
 <p>El análisis muestra que en el 2015 el Tag mas frecuente dentro de las preguntas sin respuesta valida es “probability”</p>
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" /><!-- --></p>
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" /><!-- --></p>
 </div>
+</div>
+<div id="exploracion-mediante-series-temporales" class="section level2">
+<h2>Exploración mediante series temporales</h2>
 </div>
 <div id="machine-learning" class="section level1">
-<h1>Machine Learning</h1>
-<div id="clasificacion-de-preguntas-dado-el-score" class="section level3">
-<h3>Clasificación de preguntas dado el Score:</h3>
+<h1><strong>Machine Learning</strong></h1>
+<p>Para esta tarea se realizo el tratamiento de los datos antes descrito y además se uso una division del conjunto de datos en subconjunto de entrenamiento (70%) y subconjunto de prueba (30%).</p>
+<div id="metricas-para-la-evaluacion-del-rendimiento-de-los-modelos" class="section level4">
+<h4>Métricas para la evaluación del rendimiento de los modelos</h4>
+<p><span class="math display">\[Sensitivity= \dfrac{TP}{TP+FN}\]</span></p>
+<p><span class="math display">\[Specificity = \dfrac{TN}{TN+FP} \]</span> <span class="math display">\[Accuracy = \dfrac{TP+FN}{TP+FN+TN+FP} \]</span> <span class="math display">\[RMSE = \sqrt{\dfrac{1}{N}\sum (Obs-Pred)^2} \]</span></p>
+</div>
+<div id="clasificacion-de-preguntas-segun-el-score" class="section level2">
+<h2>Clasificación de preguntas según el Score:</h2>
+<p>Se tomaron en cuenta dos algoritmos de clasificación:</p>
+<ul>
+<li>SVM (Support Vector Machine)</li>
+<li>NaiveBayes ( Naive Bayes Ingenuo)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(e1071)
+
+model.svm </code></pre></div>
+<pre><code>## 
+## Call:
+## svm(formula = questions.training$score ~ ., data = questions.training, 
+##     kernel = &quot;polynomial&quot;, class.weights = c(`-1` = 0.0235, `0` = 0.2018, 
+##         `1` = 0.7747), cost = 1000, degree = 10)
+## 
+## 
+## Parameters:
+##    SVM-Type:  C-classification 
+##  SVM-Kernel:  polynomial 
+##        cost:  1000 
+##      degree:  10 
+##       gamma:  0.009433962 
+##      coef.0:  0 
+## 
+## Number of Support Vectors:  6738</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pred.svm =<span class="st"> </span><span class="kw">predict</span>(model.svm, question.testing)
+
+
+<span class="kw">table</span>(question.testing$score,pred.svm,<span class="dt">dnn=</span><span class="kw">c</span>(<span class="st">&quot;Obs&quot;</span>,<span class="st">&quot;Pred&quot;</span>))</code></pre></div>
+<pre><code>##     Pred
+## Obs    -1    0    1
+##   -1    3   13   57
+##   0    11   59  525
+##   1    38  163 2131</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(e1071)
+
+train &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span>:<span class="dv">10000</span>,<span class="dv">7000</span>)
+test &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">10000</span>)[-train],<span class="dv">3000</span>)
+naive.questions &lt;-<span class="st"> </span><span class="kw">naiveBayes</span>(<span class="dt">x=</span> <span class="kw">as.matrix</span>(questions_dtm)[train,], <span class="dt">y =</span> questions_mining$score[train])
+
+pp &lt;-<span class="st"> </span><span class="kw">predict</span>(naive.questions,question.testing) 
+
+
+
+<span class="kw">table</span>(pp, questions_mining$score[test],<span class="dt">dnn=</span><span class="kw">c</span>(<span class="st">&quot;Obs&quot;</span>,<span class="st">&quot;Pred&quot;</span>)) </code></pre></div>
+<pre><code>##     Pred
+## Obs    -1    0    1
+##   -1    9  109  338
+##   0    15  138  405
+##   1    49  377 1560</code></pre>
+</div>
+<div id="prediccion-del-score-de-una-pregunta" class="section level2">
+<h2>Predicción del Score de una pregunta</h2>
+<p>Se tomo en cuenta el algoritmo svm como máquina de regresión.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(e1071)
+
+model.svr </code></pre></div>
+<pre><code>## 
+## Call:
+## svm(formula = fmla, data = questions.training, cost = 0.01, cross = 10)
+## 
+## 
+## Parameters:
+##    SVM-Type:  eps-regression 
+##  SVM-Kernel:  radial 
+##        cost:  0.01 
+##       gamma:  0.007518797 
+##     epsilon:  0.1 
+## 
+## 
+## Number of Support Vectors:  1310</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rmse &lt;-<span class="st"> </span>function(error)
+{
+  <span class="kw">sqrt</span>(<span class="kw">mean</span>(error^<span class="dv">2</span>))
+}
+<span class="kw">rmse</span>(error)</code></pre></div>
+<pre><code>## [1] 2.987662</code></pre>
+<p>Además de considerar el RSME como medida de rendimiento del modelo, en este caso establecimos que un margen optimo para nuestro problema es de 1.5, es decrir, <span class="math display">\[ |error|\leq 1.5.\]</span> Con un cálculo bastante sencillo se concluye que el modelo “predice” el Score de una pregunta dentro de este margen en un 79.5% de los casos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">count =<span class="st"> </span><span class="dv">0</span>
+for(i in <span class="dv">1</span>:<span class="dv">600</span>){
+  if (<span class="kw">abs</span>(error[i]) &lt;=<span class="st"> </span><span class="fl">1.5</span>){count =<span class="st"> </span>count +<span class="st"> </span><span class="dv">1</span>}else{count =<span class="st"> </span>count}
+}
+count </code></pre></div>
+<pre><code>## [1] 477</code></pre>
+</div>
+<div id="clasificacion-de-preguntas-cerradas" class="section level2">
+<h2>Clasificación de preguntas Cerradas</h2>
+<p>Se tomaron en cuenta 3 algoritmos de clasificacion: -SVM (Support Vector Machine) -NaiveBayes (Naive Bayes Ingenuo) -C5.0 (Arbol de Decisión)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> train.sample &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span>:<span class="dv">1189</span>,<span class="dv">832</span>)
+ test.sample &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">1189</span>)[-train.sample],<span class="dv">357</span>)
+
+closed.svm</code></pre></div>
+<pre><code>## 
+## Call:
+## svm.default(x = closed.training, y = vector.class[train], type = &quot;one-classification&quot;, 
+##     kernel = &quot;polynomial&quot;, degree = 7, nu = 0.4, cachesize = 200, 
+##     cross = 10)
+## 
+## 
+## Parameters:
+##    SVM-Type:  one-classification 
+##  SVM-Kernel:  polynomial 
+##      degree:  7 
+##       gamma:  0.008 
+##      coef.0:  0 
+##          nu:  0.4 
+## 
+## Number of Support Vectors:  778</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(pred.test,vector.class[test.sample])</code></pre></div>
+<pre><code>##          
+## pred.test FALSE TRUE
+##     FALSE   282   55
+##     TRUE     17    3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ## tree.model &lt;- C5.0(x= closed.training, y = as.factor(vector.class[train.sample]), trials = 20)
+<span class="kw">table</span>(p ,<span class="kw">as.factor</span>(vector.class[test.sample]))</code></pre></div>
+<pre><code>##        
+## p       FALSE TRUE
+##   FALSE   280   56
+##   TRUE     19    2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># naive.closed.model &lt;- naiveBayes(x = closed.training , y = vector.class[train.sample] , data = closed.train)</span>
+
+<span class="kw">table</span>(p1, vector.class<span class="fl">.2</span>[test.sample])</code></pre></div>
+<pre><code>##        
+## p1        F   T
+##   FALSE 209  45
+##   TRUE   90  13</code></pre>
 </div>
 </div>
 </section>

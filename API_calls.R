@@ -16,3 +16,16 @@ closed.questions <- stack_search("probability", closed = T, pagesize=100,num_pag
 noclosed.questions <-  stack_search("probability", closed = F, pagesize=100,num_pages=10,fromdate=1420070400,todate=1451606400,filter = "!9YdnSIN18")
 save(closed.questions, file = "closed questions.Rdata")
 save(noclosed.questions, file = "noclosed questions.Rdata")
+
+
+proba <- stack_search("",pagesize=100,num_pages=80,fromdate=1420070400,todate=1451606400,tagged = "probability")
+analisis <- stack_search("",pagesize=100,num_pages=20,fromdate=1420070400,todate=1451606400, tagged = "real-analysis")
+algebra <- stack_search("",pagesize=100,num_pages=20,fromdate=1420070400,todate=1451606400, tagged = "linear-algebra")
+calculus <- stack_search("",pagesize=100,num_pages=20,fromdate=1420070400,todate=1451606400, tagged = "calculus")
+equations <- stack_search("",pagesize=100,num_pages=20,fromdate=1420070400,todate=1451606400, tagged = "differential-equations")
+
+save(proba, file = "proba.Rdata")
+save(analisis, file = "analisis.Rdata")
+save(algebra, file = "algebra.Rdata")
+save(calculus, file = "calculus.Rdata")
+save(equations, file = "equations.Rdata")
